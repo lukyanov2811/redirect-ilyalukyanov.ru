@@ -1,14 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>Redirecting...</title>
-    <meta http-equiv="refresh" content="0; url=https://ilyalukyanov.com">
-    <script>
-        window.location.href = "https://ilyalukyanov.com";
-    </script>
+   <meta charset="utf-8">
+   <title>Redirecting...</title>
+   <!-- Яндекс.Метрика counter -->
+   <script type="text/javascript">
+       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+       m[i].l=1*new Date();
+       for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+       k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+       ym(99914168, "init", {
+           clickmap:true,
+           trackLinks:true,
+           accurateTrackBounce:true
+       });
+
+       // Отправляем информацию о редиректе в Метрику
+       var currentPath = window.location.pathname;
+       ym(99914168, 'hit', window.location.href, {
+           title: 'Redirect from: ' + window.location.href,
+           referer: document.referrer
+       });
+
+       // Делаем редирект с небольшой задержкой, чтобы метрика успела отправить данные
+       setTimeout(function() {
+           window.location.href = "https://ilyalukyanov.com" + currentPath;
+       }, 300);
+   </script>
+   <noscript><div><img src="https://mc.yandex.ru/watch/99914168" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+   <!-- /Яндекс.Метрика counter -->
+   <meta http-equiv="refresh" content="0.3; url=https://ilyalukyanov.com">
 </head>
 <body>
-    <p>Redirecting to <a href="https://ilyalukyanov.com">ilyalukyanov.com</a>...</p>
+   <p>Redirecting to <a href="https://ilyalukyanov.com">ilyalukyanov.com</a>...</p>
 </body>
 </html>
